@@ -6,8 +6,8 @@
  */
 
 (function ( angular ) {
-  var mod = angular.module( 'firstApp', [] );
-  mod.controller( 'MainCtrl', function ( $scope ) {
+  var mod = angular.module( 'sportsTeam', [] );
+  mod.controller( 'teamListController', function ( $scope ) {
     $scope.teams = ['Mets', 'Yankees', 'Knicks', 'Nets', 'Rangers',
       'Devils', 'Islanders', 'Giants', 'Jets'];
   } );

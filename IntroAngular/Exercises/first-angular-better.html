@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <!-- Change ng-app so that it takes an argument of "firstApp" -->
-<html ng-app>
+<html ng-app="sportsTeam">
 <head>
   <title>Our first AngularJS page</title>
   <script src="/common/js/angular/angular.js"></script>
-
+  <script src="first-angular-better.js"></script>
   <!--
   Add a script tag pointing to first-angular-better.js
   -->
@@ -12,7 +12,7 @@
 </head>
 <body>
 <!-- Add an ng-controller attribute which loads MainCtrl -->
-<div>
+<div ng-controller="teamListController">
   <p>
     <label for="team">Please name your favorite sports team: </label>
     <input ng-model="team" type="text" name="team" id="team" autofocus/>
@@ -27,6 +27,9 @@
   <!--
   Add an unordered list which lists out the teams in $scope.teams
   -->
+  <ul>
+    <li ng-repeat="team in teams">{{team}}</li>
+  </ul>
 
 </div>
 
