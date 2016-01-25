@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Change ng-app so that it takes an argument of "firstApp" -->
+<!-- Change ng-app so that it takes an argument of "sportsTeam" -->
 <html ng-app="sportsTeam">
 <head>
   <title>Our first AngularJS page</title>
@@ -19,7 +19,7 @@
   </p>
 
   <p ng-if="team">
-    Your favorite team is the {{ team }}.
+    Your favorite team is the {{ team.toUpperCase() }}.
   </p>
 
   <p>Here are some other sports teams: </p>
@@ -27,9 +27,15 @@
   <!--
   Add an unordered list which lists out the teams in $scope.teams
   -->
+  <input type="text" ng-model="teamFilter"
   <ul>
-    <li ng-repeat="team in teams">{{team}}</li>
+    <li ng-repeat="team in teams  | filter : teamFilter">{{team}}</li>
   </ul>
+  <br />
+  <div ng-show="(teams | filter: teamFilter).length === 0">
+      No Teams found.
+  </div>
+  {{(teams | filter: teamFilter).length | number}} teams found.
 
 </div>
 

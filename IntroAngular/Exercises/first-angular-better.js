@@ -12,3 +12,7 @@
       'Devils', 'Islanders', 'Giants', 'Jets'];
   } );
 })( angular );
+
+(function (angular){
+  var mod = angular.module("sportsFan", ["sportsTeam"]);
+})(angular);
