@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="basicModule">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World</title>
+</head>
+<body>
+   <section ng-controller="firstController">
+      <h1>{{title}}</h1>
+      <ul>
+          <li ng-repeat="user in users">{{user}}</li>
+      </ul>
+      
+   </section>
+    <h1>Hello World!</h1>
+   <form>
+        <label for="username">Name:</label>
+        <input type="text" name="username" ng-model="username" />
+   </form>
+   <br />
+   <span ng-if="username"> Hello, {{username}}</span>
+   <button id="btn" ng-click="compliment(username)">Compliments</button> <!-- username is ng-model bound -->
+    <script src="/common/js/angular/angular.js"></script>
+    <script src="/IntroAngular/Exercises/standard-controller.js"></script>
+    <script>
+      function compliment(someName) {s
+        console.log(someName + " is a good programmer.");
+      }
+    </script>
+  </body>
+</html>
